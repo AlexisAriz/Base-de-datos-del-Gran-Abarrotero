@@ -53,9 +53,9 @@ cajeros).
 Este proyecto fue desarrollado en la Facultad de Ciencias de la UNAM
 (Semestre 2023-II) para la materia de Fundamentos de Bases de Datos:
 
--   Mario Letepichia Romero --- Número de cuenta: 318316611\
--   Ivette González Mancera --- Número de cuenta: 316014490\
--   Jaime Octavio Delfín López --- Número de cuenta: 318315308\
--   Alexis de Jesús Arizmendi López --- Número de cuenta: 318176110\
--   Yun Hernández González --- Número de cuenta: 318261171\
+-   Mario Letepichia Romero --- Número de cuenta: 318316611
+-   Ivette González Mancera --- Número de cuenta: 316014490
+-   Jaime Octavio Delfín López --- Número de cuenta: 318315308
+-   Alexis de Jesús Arizmendi López --- Número de cuenta: 318176110
+-   Yun Hernández González --- Número de cuenta: 318261171
 -   Erick Joel Baltodano Cuevas --- Número de cuenta: 312245924
