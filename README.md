@@ -1,61 +1,61 @@
-# Proyecto de Base de Datos: El Gran Abarrotero 🏪
+# Cómo Ejecutar el Proyecto
 
-Este repositorio contiene el proyecto final para la materia de Fundamentos de Bases de Datos, enfocado en el diseño e implementación de una base de datos para una tienda de abarrotes llamada "El Gran Abarrotero".
+Para probar este proyecto en tu entorno local, necesitas tener instalado
+PostgreSQL (y opcionalmente pgAdmin o DBeaver para facilitar la interfaz
+gráfica).
 
----
+Sigue este orden estricto de ejecución para evitar errores de
+dependencias:
 
-## 📜 Descripción
+## 1. Crear la base de datos
 
-El objetivo principal de este proyecto es modelar, crear y poblar una base de datos relacional en **PostgreSQL** que gestione eficientemente la información de una tienda de abarrotes. Esto incluye la administración de productos, empleados, clientes, ventas y el inventario en las distintas sucursales.
+Abre tu consola de `psql` o tu gestor de base de datos y crea una nueva
+base de datos para el proyecto:
 
-El sistema está diseñado para manejar las operaciones diarias de la tienda, permitiendo realizar consultas complejas y mantener la integridad de los datos.
+``` sql
+CREATE DATABASE el_gran_abarrotero;
+```
 
----
+Conéctate a la base de datos recién creada.
 
-## 🗃️ Estructura del Proyecto
+## 2. Ejecutar el esquema (DDL)
 
-El proyecto se encuentra organizado en las siguientes carpetas y archivos:
+Ejecuta el script `DDL.sql`. Esto creará todas las tablas principales
+(Sucursal, Producto, Empleado, Cliente, Venta, etc.) junto con sus
+llaves primarias, foráneas y restricciones (como checks y dominios).
 
-* **`/Database`**: Contiene todos los scripts SQL necesarios para la creación, manipulación y consulta de la base de datos.
-    * **`DDL.sql`**: Creación de tablas, restricciones y llaves.
-    * **`DML.sql`**: Inserción de datos de ejemplo para poblar la base de datos.
-    * **`DQL.sql`**: Consultas de ejemplo para obtener información relevante.
-    * **`Programacion.sql`**: Procedimientos almacenados y triggers para automatizar tareas.
-* **`/Diagrams`**: Incluye los diagramas del modelo de la base de datos.
-    * **`ER_MongoBingo.jpg`**: Diagrama Entidad-Relación.
-    * **`Relacional_MongoBingo.jpg`**: Diagrama del Esquema Relacional.
-    * Archivos fuente `.drawio` de los diagramas.
+## 3. Cargar la lógica de programación
 
----
+Ejecuta el script `Programacion.sql`.
 
-## 🖼️ Modelo de la Base de Datos
+Es muy importante hacerlo antes de poblar la base de datos o registrar
+ventas, ya que esto inicializa los Procedimientos Almacenados (Stored
+Procedures) y los Disparadores (Triggers) que validan las inserciones y
+calculan el stock dinámicamente.
 
-Se diseñó un modelo Entidad-Relación y un modelo Relacional para representar la estructura de la base de datos.
+## 4. Poblar la base de datos (DML)
 
-### Diagrama Entidad-Relación
-*A continuación, se muestra una imagen del diagrama Entidad-Relación que sirvió como base para el diseño.*
-![Diagrama Entidad-Relación](./Diagrams/ER_MongoBingo.jpg)
+Ejecuta el script `DML.sql`. Este archivo contiene todos los comandos
+`INSERT` que llenarán los catálogos con datos de prueba (sucursales,
+clientes, empleados y productos iniciales).
 
-### Esquema Relacional
-*Este es el esquema relacional que define las tablas, sus atributos y las relaciones entre ellas.*
-![Esquema Relacional](./Diagrams/Relacional_MongoBingo.jpg)
+## 5. Probar las consultas (DQL)
 
----
+Finalmente, abre el script `DQL.sql` y ejecuta las consultas analíticas
+una por una para comprobar que los datos se extraen correctamente (por
+ejemplo, el cálculo de ventas por departamento o el desempeño de los
+cajeros).
 
-## ✨ Funcionalidades Principales
+------------------------------------------------------------------------
 
-* **Gestión de Catálogos**: Manejo de la información de productos, clientes y empleados.
-* **Control de Inventario**: Administración del stock de productos por sucursal.
-* **Registro de Ventas**: Sistema para registrar las ventas y los productos asociados a cada una.
-* **Consultas Analíticas**: Consultas complejas para obtener insights del negocio.
-* **Automatización**: Uso de triggers y procedimientos para mantener la consistencia e integridad de los datos.
+# Autores y Equipo de Desarrollo
 
----
+Este proyecto fue desarrollado en la Facultad de Ciencias de la UNAM
+(Semestre 2023-II) para la materia de Fundamentos de Bases de Datos:
 
-## 👥 Autores
-
-* Arturo
-* Jaime
-* Braulio
-* Daniel
-* Yun
+-   Mario Letepichia Romero --- Número de cuenta: 318316611\
+-   Ivette González Mancera --- Número de cuenta: 316014490\
+-   Jaime Octavio Delfín López --- Número de cuenta: 318315308\
+-   Alexis de Jesús Arizmendi López --- Número de cuenta: 318176110\
+-   Yun Hernández González --- Número de cuenta: 318261171\
+-   Erick Joel Baltodano Cuevas --- Número de cuenta: 312245924
